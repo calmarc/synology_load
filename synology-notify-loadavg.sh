@@ -9,7 +9,7 @@
 schwellenwert="1.7"              # vom 5minuten-load Durchschnitt
 pause_nach_push=300              # in Sekunden
 scan_alle_sekunden=30            # alle 30 Sekunden kontrollieren
-log_file="${BASH_SOURCE[0]}.log" # wo das Script selber ist mit .log anhaengsel
+log_file="${BASH_SOURCE[0]}.log" # wo das Script selber ist mit .log Anhaengsel
 
 #-----------------------------------
 
