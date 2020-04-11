@@ -14,9 +14,9 @@ log_file="${BASH_SOURCE[0]}.log" # wo das Script selber ist mit .log anhaengsel
 #-----------------------------------
 
 echo >> "$log_file"
-echo "[$(date)] Script neu gestartet:" >> "$log_file"
+echo "[PID $$] Script gestartet am: $(date)" >> "$log_file"
 
-counter=0 
+counter=1
 push_nachricht=0
 push_zeit=0
 
@@ -46,6 +46,7 @@ do
   sleep $scan_alle_sekunden
 done
 
-echo '[script beendet.]' >> "$log_file"
+echo >> "$log_file"
+echo '[PID $$] ...beendet' >> "$log_file"
 
 # fertig..  Stunde (3600 sec) vorbei... ueber cron etc neustarten
