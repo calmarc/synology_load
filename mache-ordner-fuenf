@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Lieder: wenn mehr als fuenf vom der gleichen Gruppe, mache so einen
+# Ordner und tue die rein.
+
+# maximum pattern dings?
+for file in *;
+do
+   b=${file%-*}
+
+   #find . -maxdepth 1 -name "${b}-"
+
+   if [ -d "${b}" ]; then
+     echo  "Kopiere in Ordner: mv '${file}' [${b}]"
+     mv "${file}" "${b}"
+     continue
+   fi
+
+   x=0
+   for wieviel in ${b}-*
+   do
+     (( x++ ))
+   done
+
+   if (( x > 5 ))
+   then 
+     echo "Erstelle Ordner [${b}] und verschiebe darin: '${file}'"
+     mkdir "${b}"
+     mv "${file}" "${b}"
+   fi
+done
