@@ -6,7 +6,7 @@
 find . -type f -name "*"| while read filen;
 do
 
-   b=${filen%-*} # vom Anfang bis zum '-'
+   b=${filen%-*} # Loesche alles nach dem - bis Ende
 
    if [ -d "${b}" ]; then
      echo  "Kopiere in Ordner: mv '${filen}' [${b}]"
@@ -14,7 +14,7 @@ do
      continue
    fi
 
-   # alles nach dem ./ (${b#./}
+   # loesche ./ am Anfang ${b#./}
 
    x=$(find . -maxdepth 1 -type f -name "${b#./}*" | wc -l)
 
