@@ -14,7 +14,7 @@ do
      continue
    fi
 
-   # loesche ./ am Anfang ${b#./}
+   # loesche ./ am Anfang [${b#./}], find mag kein ./pattern
 
    x=$(find . -maxdepth 1 -type f -name "${b#./}*" | wc -l)
 
