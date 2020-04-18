@@ -3,12 +3,10 @@
 # Lieder: wenn mehr als fuenf vom der gleichen Gruppe, mache so einen
 # Ordner und tue die rein.
 
-# maximum pattern dings?
-
 find . -type f -name "*"| while read filen;
 do
 
-   b=${filen%-*}
+   b=${filen%-*} # vom Anfang bis zum '-'
 
    if [ -d "${b}" ]; then
      echo  "Kopiere in Ordner: mv '${filen}' [${b}]"
@@ -16,7 +14,7 @@ do
      continue
    fi
 
-   # b#./remove leading ./ .. find does not like that
+   # alles nach dem ./ (${b#./}
 
    x=$(find . -maxdepth 1 -type f -name "${b#./}*" | wc -l)
 
