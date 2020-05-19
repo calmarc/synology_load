@@ -33,14 +33,14 @@ then
         echo 'Konnte nicht gefunden werden bei der "mount Befehlsausgabe"'
         echo 'Der backup-prozess wird nicht ausgefuehrt!'
         echo '----------------------------------------------------------'
-    echo
-        echo '------[ ACHTUNG ] ----------------------------------------'
-
+        echo
+        echo '------[ ACHTUNG ] ----------------------------------------' >> $LOGFILE
         date >> $LOGFILE
         echo 'Die Backupplatte mit 2.8 TB ist nicht eingelegt' >> $LOGFILE
         echo 'Konnte nicht gefunden werden bei der "mount Befehlsausgabe"' >> $LOGFILE
         echo 'Der backup-prozess wird nicht ausgefuehrt!' >> $LOGFILE
         echo '----------------------------------------------------------' >> $LOGFILE
+
         /usr/syno/bin/synonotify PerfEvent_System_CPU_Avg_1
         exit 0
 fi
@@ -78,7 +78,8 @@ then
         echo 'Konnte nicht gefunden werden via "df -h"' >> $LOGFILE
         echo 'Der backup-prozess wird nicht ausgefuehrt!' >> $LOGFILE
         echo '----------------------------------------------------------' >> $LOGFILE
-    /usr/syno/bin/synonotify PerfEvent_System_CPU_Avg_1
+
+        /usr/syno/bin/synonotify PerfEvent_System_CPU_Avg_1
         exit 0
 fi
 
