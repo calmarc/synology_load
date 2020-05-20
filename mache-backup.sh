@@ -103,6 +103,7 @@ echo "" | tee >> ${LOGFILE}
 #cho "Versuche Platte auszuhaengen (umount)..." | tee >> $LOGFILE
 #/usr/syno/bin/synousbdisk -umount sdq
 
+date | tee >> $LOGFILE
 echo "------[ ... beendet ] -------" | tee >> $LOGFILE
 echo "" | tee >> ${LOGFILE}
 
