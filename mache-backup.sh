@@ -89,6 +89,7 @@ cp -al "${DIR}/backup.0" "${DIR}/backup.1"
 
 rsync -av --delete  /volume1/homes/oronso/  "${DIR}/backup.0/" | tee -a ${LOGFILE}
 
+# damit das 'jetztige' Datum dasteht.
 touch "${DIR}/backup.0"
 
 # ------------------------------------------------------
@@ -111,3 +112,4 @@ date | tee -a $LOGFILE
 echo "------[ ... beendet ] -------" | tee -a $LOGFILE
 echo "" | tee -a ${LOGFILE}
 
+/usr/syno/bin/synonotify PerfEvent_System_CPU_Avg_15
